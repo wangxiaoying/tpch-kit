@@ -1,6 +1,6 @@
 select
 	l_shipmode,
-	o_orderpriority,
+	o_orderpriority
 from
 	orders,
 	lineitem
