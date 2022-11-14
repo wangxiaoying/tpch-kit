@@ -1,5 +1,6 @@
 CUR_DIR=$(pwd)
 echo $CUR_DIR
+echo $POSTGRES_URL
 for i in `ls *.tbl`; do
 	table=${i/.tbl/}
 	echo "upload $table..."
