@@ -1,7 +1,9 @@
 .python-version
 *.o
-*.tbl
+*.tbl*
 *.duckdb
+delete.*
 dbgen/dbgen
 dbgen/qgen
 dbgen/sf10
+upsert.duckdb.sql
