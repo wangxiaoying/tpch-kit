@@ -3,3 +3,5 @@
 dbgen/dbgen
 dbgen/qgen
 dbgen/sf10
+*.duckdb
+*.db
