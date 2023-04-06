@@ -23,11 +23,16 @@
 
 SET GLOBAL local_infile = 'ON';
 SHOW GLOBAL VARIABLES LIKE 'local_infile';
-LOAD DATA LOCAL INFILE '/Users/momo/prog/tpch-kit/dbgen/customer.tbl' INTO TABLE `customer` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
-LOAD DATA LOCAL INFILE '/Users/momo/prog/tpch-kit/dbgen/lineitem.tbl' INTO TABLE `lineitem` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
-LOAD DATA LOCAL INFILE '/Users/momo/prog/tpch-kit/dbgen/nation.tbl' INTO TABLE `nation` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
-LOAD DATA LOCAL INFILE '/Users/momo/prog/tpch-kit/dbgen/orders.tbl' INTO TABLE `orders` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
-LOAD DATA LOCAL INFILE '/Users/momo/prog/tpch-kit/dbgen/part.tbl' INTO TABLE `part` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
-LOAD DATA LOCAL INFILE '/Users/momo/prog/tpch-kit/dbgen/partsupp.tbl' INTO TABLE `partsupp` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
-LOAD DATA LOCAL INFILE '/Users/momo/prog/tpch-kit/dbgen/region.tbl' INTO TABLE `region` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
-LOAD DATA LOCAL INFILE '/Users/momo/prog/tpch-kit/dbgen/supplier.tbl' INTO TABLE `supplier` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+LOAD DATA LOCAL INFILE '/root/tpch-kit/dbgen/data_sf10/customer.tbl' INTO TABLE `customer` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+LOAD DATA LOCAL INFILE '/root/tpch-kit/dbgen/data_sf10/lineitem.tbl' INTO TABLE `lineitem` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n' (`l_orderkey`,`l_partkey`,`l_suppkey`,`l_linenumber`,`l_quantity`,`l_extendedprice`,`l_discount`,`l_tax`,`l_returnflag`,`l_linestatus`,`l_shipdate`,`l_commitdate`,`l_receiptdate`,`l_shipinstruct`,`l_shipmode`,`l_comment`) set l_id = NULL;
+-- LOAD DATA LOCAL INFILE '/root/tpch-kit/dbgen/data_sf10/lineitem.tbl' INTO TABLE `lineitem` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+LOAD DATA LOCAL INFILE '/root/tpch-kit/dbgen/data_sf10/nation.tbl' INTO TABLE `nation` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+LOAD DATA LOCAL INFILE '/root/tpch-kit/dbgen/data_sf10/orders.tbl' INTO TABLE `orders` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+LOAD DATA LOCAL INFILE '/root/tpch-kit/dbgen/data_sf10/part.tbl' INTO TABLE `part` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+LOAD DATA LOCAL INFILE '/root/tpch-kit/dbgen/data_sf10/partsupp.tbl' INTO TABLE `partsupp` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n' (`ps_partkey`, `ps_suppkey`, `ps_availqty`, `ps_supplycost`, `ps_comment`) set ps_id = NULL;
+-- LOAD DATA LOCAL INFILE '/root/tpch-kit/dbgen/data_sf10/partsupp.tbl' INTO TABLE `partsupp` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+LOAD DATA LOCAL INFILE '/root/tpch-kit/dbgen/data_sf10/region.tbl' INTO TABLE `region` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+LOAD DATA LOCAL INFILE '/root/tpch-kit/dbgen/data_sf10/supplier.tbl' INTO TABLE `supplier` FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+
+
+
