@@ -3,7 +3,7 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-create view revenue:s (supplier_no, total_revenue) as
+WITH revenue:s (supplier_no, total_revenue) as (
 	select
 		l_suppkey,
 		sum(l_extendedprice * (1 - l_discount))
@@ -15,7 +15,7 @@ create view revenue:s (supplier_no, total_revenue) as
 	group by
 		l_suppkey;
 
-:o
+)
 select
 	s_suppkey,
 	s_name,
@@ -36,5 +36,4 @@ where
 order by
 	s_suppkey;
 
-drop view revenue:s;
 :n -1
